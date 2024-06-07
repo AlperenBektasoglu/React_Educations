@@ -8,6 +8,10 @@ React ücretsiz, açık kaynaklı bir js kütüphanesidir. Frontend geliştirmek
 
 **Not:** Visual Studio ile birlikte, React node.js e bağımlı olduğu için node.js kütüphanesininde indirilmesi gerekir.
 
+### Client Side Rendering - Proje Oluşturma
+
+Sayfa kodları client tarafında render edilir. CEO noktasında performanssızdır.
+
 1. Adım: Proje oluşturma vite.js üzerinden yapılmaktadır. Terminali açtıktan sonra aşağıdaki komut çalıştırılır.
 
 ```npm
@@ -17,6 +21,10 @@ $ npm create vite@latest
 2. Adım terminaldeki komutlar takip edilerek kurulum işlemi tamamlanır. Kurarken proje klasörünün içerisinde olduğunuza emin olmalısınız.
 
 3. nmp run dev komutu ile projeyi ayağa kaldırabilirsiniz.
+
+### Server Side Rendering - Proje Oluşturma
+
+Sayfa kodları server tarafında render edilir. CEO noktasında avantaj sağlar. Bunun için Next.js kullanılır. Tabi bu bazı noktalarda sorunlar yaşatabilir. Component bazlı sorun yaşanan durumlarda next.js, ilgili komponenti client tarafında render edebilmenize izin verir.
 
 ## React Ana Bileşenler
 
@@ -39,7 +47,7 @@ JSX Kurallları:
 1. React üzerinde JSX kuralları içerisindeki en önemli kural, fonksiyon bir çıktı döndürürken mutlaka o çıktıyı bir html çıktısı olarak döndürmelidir.
 2. Ek olarak bir değişken üzerinden parametre alırken veya JSX üzerinde HTML yapılarında bir JavaScript kodu kullanacağımız zaman "{}" etiketleri içerisinde kullanılmaktadır.
 3. Fragments Kullanımı; Normalde JSX ile tek bir html elemanı döndürülebilir. Fragment yapısı ile oluşturduğumuz bir component veya bir fonksiyon içerisinde birden fazla HTML kodunu döndürebiliriz.Html elemanlarını Alt alta olacak şekilde (bir kapsayıcı içermeyecek) döndürmeniz durumunda hata verecektir. Ya elementler genel bir div içine alınır yada Fragment(<></>) kullanılır.
-4. HTML üzerinde kullandığımız "class" tipi artık "className" olarak kullanılmaktadır.
+4. HTML üzerinde kullandığımız "class" özelliği artık "className" olarak kullanılmaktadır.
    **Not:** HTML etiketileri içerisinde kullandığımız çoğu etiket artık React üzerinde camelCase yapısı olarak kullanılmaktadır.
 5. HTML içerisinde gördüğünüz kadarıyla bazı etiketler kapatılmadan kullanılabilmektedir. Tüm Etiketleri Kapatın.
 6. Style özelliğini kullanırken <a style={{}}></a> şeklinde bir kullanım yapmalısın. Burada birinci parantez JSX'in parantezi 2. parantez ise style'ın parantezidir.
@@ -131,3 +139,7 @@ function App() {
 
 export default App;
 ```
+
+Aşağıdaki yapıda da iç içe componentlerde; ana komponentin içerisinde, içteki komponenti children isminde props olarak yakalayabilirsiniz.
+
+![Alternatif Metin](Assets/images/ScreenShot001.png)
